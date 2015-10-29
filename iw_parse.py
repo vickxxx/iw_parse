@@ -20,8 +20,10 @@ def get_name(cell):
     @return string
         The name / essid of the network.
     """
-
-    return matching_line(cell, "ESSID:")[1:-1]
+    name = matching_line(cell, "ESSID:")[1:-1]
+    #print 'in iw_parse :',name,type(name)
+    #return unicode(name).encode('utf-8').decode('utf-8')
+    return name
 
 def get_quality(cell):
     """ Gets the quality of a network / cell.
